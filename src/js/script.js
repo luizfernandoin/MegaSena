@@ -1,6 +1,6 @@
 let isRotating = false;
 let currentNumber = 1;
-const cubes = document.querySelectorAll(".cube"); // Seleciona todos os cubos
+const cubes = document.querySelectorAll(".cube");
 
 function setRandomNumbers(cube) {
   const sides = cube.getElementsByClassName("side");
@@ -26,7 +26,6 @@ function rotateCube(cube) {
 
       cube.style.transform = `rotateY(${(currentNumber - 1) * -60}deg)`;
 
-      // Exibir todas as outras faces novamente
       const otherFaces = cube.querySelectorAll(".side:not(:nth-child(1))");
       for (let i = 0; i < otherFaces.length; i++) {
         otherFaces[i].style.display = "flex";
@@ -38,15 +37,13 @@ function rotateCube(cube) {
 }
 
 function rotateCubesSuccessively() {
-  // Percorre cada cubo e os faz girar um após o outro
   cubes.forEach((cube, index) => {
     setTimeout(() => {
       rotateCube(cube);
-    }, index * 1500); // Delay entre os giros de cada cubo (1,5 segundos)
+    }, index * 1500); 
   });
 }
 
-// Adiciona um ouvinte de evento ao botão para acionar a rotação sucessiva dos cubos
 const rotateButton = document.getElementById("rotateButton");
 rotateButton.addEventListener("click", () => {
   rotateCubesSuccessively();

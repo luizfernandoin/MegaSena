@@ -55,6 +55,8 @@ h1 {
     flex-direction: row;
     column-gap: 5rem;
     margin-top: 3rem;
+    width: 80%;
+    justify-content: center;
 }
 
 .cube {
@@ -82,12 +84,19 @@ h1 {
 
 .button {
     margin-top: 3rem;
-    margin-bottom: 1rem;
-    border-radius: .5rem;
+    bottom: 20px;
+    right: 20px;
+    background-color: #161721;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
 }
 
 .button:hover{
-    transition: ;
+    transform: translateY(-5px);
 }
 
 .side:nth-child(1) { transform: translateZ(45px); }
@@ -96,3 +105,34 @@ h1 {
 .side:nth-child(4) { transform: rotateY(180deg) translateZ(45px); }
 .side:nth-child(5) { transform: rotateY(240deg) translateZ(45px); }
 .side:nth-child(6) { transform: rotateY(300deg) translateZ(45px); }
+
+
+@media (max-width: 1080px){
+    .container {
+        width: 80%;
+    }
+}
+
+@media (max-width: 950px){
+    .container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 840px){
+    .container {
+        height: auto;
+        min-height: 60vh;
+        padding: 2rem;
+    }
+
+    .cubes-container {
+        column-gap: 5rem;
+        flex-wrap: wrap;
+        row-gap: 1rem;
+    }
+
+    .title,  .title-conteiner p{
+        text-align: center;
+    }
+}
